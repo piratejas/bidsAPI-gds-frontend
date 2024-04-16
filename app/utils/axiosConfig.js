@@ -6,7 +6,6 @@ const notAuthenticated = axios.create({
 
 const authenticated = axios.create({
 	baseURL: 'http://localhost:4001/users'
-
 })
 
 const admin = axios.create({

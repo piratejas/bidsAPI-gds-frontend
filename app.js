@@ -9,7 +9,8 @@ const userRouter = require("./app/routes/user");
 const adminRouter = require("./app/routes/admin");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = 3000;
+const ipAddress = '0.0.0.0';
 
 nunjucks.configure([
     "node_modules/govuk-frontend/",
@@ -32,7 +33,7 @@ app.use('/user', userRouter);
 app.use('/admin', adminRouter);
 
 app.listen(port, ipAddress, () => {
-  console.log(`Server is running on port ${port}`);
-});
+	console.log(`Server is running at http://${ipAddress}:${port}`);
+  });
 
 module.exports = app;
